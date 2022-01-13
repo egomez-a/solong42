@@ -6,7 +6,7 @@
 /*   By: egomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 18:59:18 by egomez-a          #+#    #+#             */
-/*   Updated: 2022/01/13 12:35:34 by egomez-a         ###   ########.fr       */
+/*   Updated: 2022/01/13 12:44:51 by egomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,7 @@
 int	close_game(t_game *game)
 {
 	memclear(game->map.map2d);
-	mlx_destroy_image(game->mlx, game->img.collect);
-	mlx_destroy_image(game->mlx, game->img.wall);
-	mlx_destroy_image(game->mlx, game->img.hero);
-	mlx_destroy_image(game->mlx, game->img.floor);
-	mlx_destroy_image(game->mlx, game->img.exit);
+	mlx_clear_window(game->mlx, game->window.reference);
 	mlx_destroy_window(game->mlx, game->window.reference);
 	free(game->mlx);
 	exit(1);
